@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICHE | Premium Luxury Fashion & Haute Couture</title>
+
+    <meta name="theme-color" content="#111111" />
+    <meta name="description"
+        content="Discover premium luxury fashion, structured tailoring, and timeless haute couture designs at CLICHE." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="site-header" id="mainHeader">
+        <div class="header-container">
+            <button class="menu-toggle action-btn" id="sidebarToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="#home" class="logo">CLICHE</a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active" data-route="home">Home</a>
+                <a href="#shop" class="nav-link" data-route="shop">Shop</a>
+                <a href="#wishlist" class="nav-link" data-route="wishlist">Wishlist</a>
+                <a href="#tracking" class="nav-link" data-route="tracking">Track Order</a>
+                <a href="#dashboard" class="nav-link" data-route="dashboard">Dashboard</a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Theme Toggle -->
+                <button class="action-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Search Button -->
+                <button class="action-btn" id="searchOpenBtn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <!-- Wishlist Button -->
+                <a href="#wishlist" class="action-btn" aria-label="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="wishlistBadge">0</span>
+                </a>
+                <!-- Cart Button -->
+                <a href="#cart" class="action-btn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cartBadge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- --- Toast Notifications Container --- -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- --- MAIN VIEWPORT PANEL --- -->
+    <main id="viewPort">
+
+        <!-- ==================== PAGE 1: HOME ==================== -->
+        <section id="view-home" class="page-view active">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <h1 class="hero-title">Timeless <br>Tailoring</h1>
+                    <p class="hero-desc">Experience structured simplicity & modern luxury designed for high-caliber
+                        curation.</p>
+                    <a href="#shop" class="btn btn-primary">Shop Collection</a>
+                </div>
+            </div>
+
+            <!-- Collections Section -->
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Curated Minimal</p>
+                    <h2 class="section-title">The Seasonal Collections</h2>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+                            alt="Women Haute Couture" class="category-image">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Prêt-à-Porter</h3>
+                            <a href="#shop" class="btn-text">Explore Women</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
+                            alt="Men Structured Tailoring" class="category-image">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Tailored Menswear</h3>
+                            <a href="#shop" class="btn-text">Explore Men</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
+                            alt="Luxury Accents" class="category-image">
+                        <div class="category-overlay">
+                            <h3 class="category-name">Accents & Accessories</h3>
+                            <a href="#shop" class="btn-text">Explore Accessories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Section -->
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">High Demand</p>
+                    <h2 class="section-title">Trending Now</h2>
+                </div>
+                <div class="products-grid" id="homeTrendingGrid"></div>
+            </div>
+
+            <!-- Brand Partners Section -->
+            <div class="brand-partners-section">
+                <div class="section-container">
+                    <div class="brand-logos">
+                        <span class="brand-logo">ZARA</span>
+                        <span class="brand-logo">COS</span>
+                        <span class="brand-logo">ARITZIA</span>
+                        <span class="brand-logo">FARFETCH</span>
+                        <span class="brand-logo">H&M STUDIO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Section -->
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Testimonials</p>
+                    <h2 class="section-title">Client Appraisals</h2>
+                </div>
+                <div class="reviews-slider">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"CLICHErepresents the absolute pinnacle of high-end tailoring. The silk
+                            lapels and custom fits are flawless."</p>
+                        <div class="review-user">— Victoria Sinclair</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The linen pieces feel lightweight yet incredibly structured. Absolute
+                            perfection in minimalism."</p>
+                        <div class="review-user">— Alexander Mercer</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Exceptional client service and highly functional PWA. This is the future
+                            of luxury shopping."</p>
+                        <div class="review-user">— Camille Moreau</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <div class="section-container">
+                    <p class="section-subtitle">Newsletter</p>
+                    <h2 class="section-title">Access Private Curations</h2>
+                    <p style="margin-top: 10px; color: var(--text-secondary)">Subscribe to receive exclusive drops,
+                        couture access, and private collection releases.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your Luxury Email Address" class="newsletter-input" required>
+                        <button type="submit" class="btn btn-text">Register</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 2: SHOP ==================== -->
+        <section id="view-shop" class="page-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Exquisite Catalog</p>
+                    <h2 class="section-title">Shop Collection</h2>
+                </div>
+
+                <div class="shop-layout">
+                    <!-- Shop Filter Sidebar -->
+                    <aside class="shop-sidebar" id="shopSidebar">
+                        <!-- Category Widget -->
+                        <div class="filter-widget">
+                            <h3 class="filter-title">Couture Categories</h3>
+                            <div class="filter-list" id="categoryFilterContainer"></div>
+                        </div>
+
+                        <!-- Price Widget -->
+                        <div class="filter-widget">
+                            <h3 class="filter-title">Price Range</h3>
+                            <div class="price-range-wrap">
+                                <input type="range" id="priceRangeSlider" min="0" max="1000" value="1000"
+                                    class="price-range-slider">
+                                <div class="price-range-labels">
+                                    <span>$0</span>
+                                    <span id="priceMaxLabel">$1000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Color Widget -->
+                        <div class="filter-widget">
+                            <h3 class="filter-title">Color Curations</h3>
+                            <div class="filter-color-dots" id="colorFilterContainer"></div>
+                        </div>
+
+                        <!-- Size Widget -->
+                        <div class="filter-widget">
+                            <h3 class="filter-title">Size</h3>
+                            <div class="filter-sizes" id="sizeFilterContainer"></div>
+                        </div>
+
+                        <!-- Reset Buttons -->
+                        <button class="btn btn-secondary w-full" style="width:100%" id="clearFiltersBtn">Reset
+                            Selection</button>
+                    </aside>
+
+                    <!-- Catalog/Grid content -->
+                    <div class="catalog-content">
+                        <!-- Filters Header -->
+                        <div class="shop-controls">
+                            <div class="shop-controls-left">
+                                Showing <span id="shopProductCount">0</span> items
+                            </div>
+                            <div class="shop-controls-right">
+                                <select class="sort-select" id="shopSortSelect">
+                                    <option value="recommended">Recommended</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="alphabetical">A - Z Index</option>
+                                </select>
+                                <div class="layout-toggles">
+                                    <button class="layout-toggle-btn active" data-cols="3"><i
+                                            class="fa-solid fa-grid-3"></i></button>
+                                    <button class="layout-toggle-btn" data-cols="4"><i
+                                            class="fa-solid fa-grid-4"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skeleton Loading Blocks -->
+                        <div class="skeleton-loader" id="shopSkeletonLoader">
+                            <div class="skeleton-card">
+                                <div class="skeleton-image"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line short"></div>
+                            </div>
+                            <div class="skeleton-card">
+                                <div class="skeleton-image"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line short"></div>
+                            </div>
+                            <div class="skeleton-card">
+                                <div class="skeleton-image"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line short"></div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Grid list -->
+                        <div class="products-grid" id="shopCatalogGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 3: PRODUCT DETAILS ==================== -->
+        <section id="view-product" class="page-view">
+            <div class="section-container">
+                <div class="product-details-container" id="productDetailsBox">
+                    <!-- Dynamic Product Details Render Area -->
+                </div>
+
+                <!-- Related/Recommended products -->
+                <div style="margin-top: 80px;">
+                    <div class="section-header">
+                        <p class="section-subtitle">Finely curated</p>
+                        <h2 class="section-title">Related Collections</h2>
+                    </div>
+                    <div class="products-grid" id="relatedProductsGrid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 4: CART ==================== -->
+        <section id="view-cart" class="page-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Your Bag</p>
+                    <h2 class="section-title">Selected Masterpieces</h2>
+                </div>
+
+                <div class="cart-grid-layout">
+                    <!-- Items Section -->
+                    <div class="cart-items-panel" id="cartItemsList"></div>
+
+                    <!-- Summary Card -->
+                    <div class="summary-card">
+                        <h3 class="summary-title">Summary</h3>
+                        <div class="coupon-box">
+                            <input type="text" placeholder="Promo Code (LUXURY20)" class="coupon-input"
+                                id="couponInput">
+                            <button class="btn btn-secondary" id="applyCouponBtn">Apply</button>
+                        </div>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Private Shipping</span>
+                            <span id="cartShipping">Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Est. Duties / Taxes</span>
+                            <span id="cartTax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cartTotal">$0.00</span>
+                        </div>
+                        <a href="#checkout" class="btn btn-primary" style="margin-top: 15px">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 5: CHECKOUT ==================== -->
+        <section id="view-checkout" class="page-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Secure Gateway</p>
+                    <h2 class="section-title">Couture Checkout</h2>
+                </div>
+
+                <form class="checkout-grid" id="checkoutForm">
+                    <div class="checkout-form-section">
+                        <!-- Billing/Shipping Section -->
+                        <div>
+                            <h3 class="form-group-title">1. Shipping Details</h3>
+                            <div class="form-row">
+                                <div class="input-wrap">
+                                    <label>First Name</label>
+                                    <input type="text" required class="form-control" name="firstName"
+                                        placeholder="Victoria">
+                                </div>
+                                <div class="input-wrap">
+                                    <label>Last Name</label>
+                                    <input type="text" required class="form-control" name="lastName"
+                                        placeholder="Sinclair">
+                                </div>
+                            </div>
+                            <div class="input-wrap" style="margin-bottom: 15px">
+                                <label>Street Address</label>
+                                <input type="text" required class="form-control" name="address"
+                                    placeholder="16, CLICHE WTF INC">
+                            </div>
+                            <div class="form-row">
+                                <div class="input-wrap">
+                                    <label>City</label>
+                                    <input type="text" required class="form-control" name="city" placeholder="CLICHE">
+                                </div>
+                                <div class="input-wrap">
+                                    <label>Postal Code</label>
+                                    <input type="text" required class="form-control" name="zip" placeholder="16">
+                                </div>
+                            </div>
+                            <div class="input-wrap">
+                                <label>Mobile Contact</label>
+                                <input type="tel" required class="form-control" name="phone"
+                                    placeholder="+12 34 56 78 90">
+                            </div>
+                        </div>
+
+                        <!-- Payment Selection -->
+                        <div>
+                            <h3 class="form-group-title">2. Settlement Selection</h3>
+                            <div class="payment-methods">
+                                <div class="payment-option active" data-method="cc">
+                                    <input type="radio" name="paymentType" checked value="cc"
+                                        style="accent-color: var(--text-primary)">
+                                    <div>
+                                        <div style="font-weight: 600">Credit Card / Black Card</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary)">Settle transaction
+                                            via global premium cards.</div>
+                                    </div>
+                                    <i class="fa-regular fa-credit-card" style="margin-left: auto; font-size: 20px"></i>
+                                </div>
+                                <div class="payment-option" data-method="crypto">
+                                    <input type="radio" name="paymentType" value="crypto"
+                                        style="accent-color: var(--text-primary)">
+                                    <div>
+                                        <div style="font-weight: 600">Premium Digital Cryptocurrencies</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary)">Settle using major
+                                            blockchain values.</div>
+                                    </div>
+                                    <i class="fa-brands fa-ethereum" style="margin-left: auto; font-size: 20px"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Summary Side -->
+                    <div class="summary-card">
+                        <h3 class="summary-title">Order Overview</h3>
+                        <div id="checkoutSummaryList"></div>
+                        <div class="summary-row total">
+                            <span>Settle Total</span>
+                            <span id="checkoutSettleTotal">$0.00</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 20px">Authorize &
+                            Settle</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 6: AUTHENTICATION ==================== -->
+        <section id="view-auth" class="page-view">
+            <div class="section-container">
+                <div class="auth-container">
+                    <h2 class="auth-title" id="authTitle">Sign In</h2>
+
+                    <form id="authForm" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="input-wrap">
+                            <label>Email Address</label>
+                            <input type="email" id="authEmail" required class="form-control"
+                                placeholder="client@letoile.com">
+                        </div>
+                        <div class="input-wrap">
+                            <label>Password</label>
+                            <input type="password" id="authPassword" required class="form-control"
+                                placeholder="••••••••">
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label
+                                style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+                                <input type="checkbox" style="accent-color: var(--text-primary)"> Remember Me
+                            </label>
+                            <button type="button" class="btn-text" style="font-size: 13px">Forgot password?</button>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Authenticate
+                            Access</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        Don't have a private account? <button class="btn-text" id="toggleAuthModeBtn">Sign Up
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 7: USER DASHBOARD ==================== -->
+        <section id="view-dashboard" class="page-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Account Control</p>
+                    <h2 class="section-title">Client Dashboard</h2>
+                </div>
+
+                <div class="dashboard-layout">
+                    <!-- Dashboard Sidebar navigation -->
+                    <aside class="db-menu">
+                        <div class="db-menu-item active" data-tab="profile">
+                            <i class="fa-solid fa-user-tie"></i> Profile Settings
+                        </div>
+                        <div class="db-menu-item" data-tab="orders">
+                            <i class="fa-solid fa-file-invoice"></i> Orders History
+                        </div>
+                        <div class="db-menu-item" data-tab="crud">
+                            <i class="fa-solid fa-boxes-packing"></i> Designer Admin
+                        </div>
+                        <div class="db-menu-item" id="dashboardLogoutBtn" style="color: #ea5455; margin-top: auto">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+                        </div>
+                    </aside>
+
+                    <!-- Content display widget card -->
+                    <div class="db-content-panel">
+                        <!-- TAB A: Profile -->
+                        <div class="db-tab-content active" id="db-tab-profile">
+                            <h3 class="form-group-title">Client Coordinates</h3>
+                            <form id="dbProfileForm" style="display: flex; flex-direction: column; gap: 20px;">
+                                <div class="form-row">
+                                    <div class="input-wrap">
+                                        <label>Full Representative Name</label>
+                                        <input type="text" class="form-control" id="dbProfileName" value="Guest Client">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label>Email Access</label>
+                                        <input type="email" class="form-control" id="dbProfileEmail" readonly disabled
+                                            value="guest@letoile.com">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Profile Settings</button>
+                            </form>
+                        </div>
+
+                        <!-- TAB B: Orders -->
+                        <div class="db-tab-content" id="db-tab-orders">
+                            <h3 class="form-group-title">Your Masterpiece Transactions</h3>
+                            <div id="dbOrdersList" style="display: flex; flex-direction: column; gap: 20px;">
+                                <!-- Render orders dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- TAB C: CRUD / Admin Console -->
+                        <div class="db-tab-content" id="db-tab-crud">
+                            <h3 class="form-group-title"
+                                style="display: flex; justify-content: space-between; align-items: center;">
+                                Designer Inventory CRUD
+                                <button class="btn btn-primary" id="openAddProductFormBtn" style="padding: 8px 16px">+
+                                    New Product</button>
+                            </h3>
+
+                            <!-- Product Add/Edit Dialog Block -->
+                            <form id="crudFormPanel"
+                                style="display: none; flex-direction: column; gap: 15px; background: var(--bg-primary); padding: 20px; border-radius: var(--radius-sm); border: 1px dashed var(--accent-gold); margin-bottom: 25px;">
+                                <h4 id="crudFormTitle" style="font-family: var(--font-serif); font-size: 18px">Create
+                                    Catalog Item</h4>
+                                <input type="hidden" id="crudProductId">
+                                <div class="form-row">
+                                    <div class="input-wrap">
+                                        <label>Title Name</label>
+                                        <input type="text" class="form-control" id="crudTitle" required
+                                            placeholder="Cashmere Coat">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label>Vendor Brand</label>
+                                        <input type="text" class="form-control" id="crudVendor" required
+                                            placeholder="CLICHE Couture">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-wrap">
+                                        <label>Price ($ USD)</label>
+                                        <input type="number" class="form-control" id="crudPrice" required
+                                            placeholder="420">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label>Main Image URL</label>
+                                        <input type="url" class="form-control" id="crudImage" required
+                                            placeholder="https://unsplash.com/...">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-wrap">
+                                        <label>Category Choice</label>
+                                        <select class="form-control" id="crudCategory">
+                                            <option value="women">Women</option>
+                                            <option value="men">Men</option>
+                                            <option value="accessories">Accessories</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label>Availability Badge</label>
+                                        <input type="text" class="form-control" id="crudBadge" placeholder="New Drop">
+                                    </div>
+                                </div>
+                                <div class="input-wrap">
+                                    <label>Item Specs & Description</label>
+                                    <textarea class="form-control" id="crudDesc" rows="3"
+                                        placeholder="Engineered with premium weave fibers..."></textarea>
+                                </div>
+                                <div style="display: flex; gap: 10px;">
+                                    <button type="submit" class="btn btn-primary" id="saveProductCrudBtn">Save Custom
+                                        Masterpiece</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        id="cancelProductCrudBtn">Cancel</button>
+                                </div>
+                            </form>
+
+                            <!-- Current List of Products editable -->
+                            <div class="crud-grid" id="crudProductsGrid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 8: WISHLIST ==================== -->
+        <section id="view-wishlist" class="page-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Your Vault</p>
+                    <h2 class="section-title">Saved Treasures</h2>
+                </div>
+                <div class="products-grid" id="wishlistProductsGrid"></div>
+            </div>
+        </section>
+
+        <!-- ==================== PAGE 9: ORDER TRACKING ==================== -->
+        <section id="view-tracking" class="page-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Realtime timeline</p>
+                    <h2 class="section-title">Logistics Tracking</h2>
+                </div>
+
+                <div class="tracking-box">
+                    <div style="display: flex; gap: 15px; margin-bottom: 30px;">
+                        <input type="text" placeholder="Enter Order ID / Token" class="form-control" id="trackingInput"
+                            style="flex:1">
+                        <button class="btn btn-primary" id="triggerTrackBtn">Track Logistics</button>
+                    </div>
+
+                    <div id="trackingResultArea" style="display: none">
+                        <div class="tracking-header">
+                            <div>
+                                <h3 style="font-family: var(--font-serif)">Order ID: <span
+                                        id="trackedOrderId">#N/A</span></h3>
+                                <p style="font-size: 13px; color: var(--text-secondary)">Placed on <span
+                                        id="trackedOrderDate">Date</span></p>
+                            </div>
+                            <div style="text-align: right">
+                                <h4 style="color: var(--accent-gold); font-size: 16px" id="trackedOrderStatus">
+                                    Processing</h4>
+                            </div>
+                        </div>
+
+                        <!-- Interactive timeline -->
+                        <div class="timeline-stepper">
+                            <div class="step-node" id="track-step-1">
+                                <div class="node-circle"><i class="fa-solid fa-box"></i></div>
+                                <div class="node-label">Processed</div>
+                            </div>
+                            <div class="step-node" id="track-step-2">
+                                <div class="node-circle"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                                <div class="node-label">Dispatched</div>
+                            </div>
+                            <div class="step-node" id="track-step-3">
+                                <div class="node-circle"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="node-label">Transit</div>
+                            </div>
+                            <div class="step-node" id="track-step-4">
+                                <div class="node-circle"><i class="fa-solid fa-house-chimney-user"></i></div>
+                                <div class="node-label">Delivered</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- --- SEARCH MODAL OVERLAY --- -->
+    <div class="search-overlay-modal" id="searchOverlay">
+        <div class="search-modal-header">
+            <button class="action-btn" id="searchCloseBtn" style="font-size: 24px"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="search-input-wrap">
+            <input type="text" class="search-modal-input" placeholder="Search premium fashion..." id="searchQueryInput">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 24px"></i>
+        </div>
+        <div class="search-suggestions">
+            <div>
+                <h4 class="suggestion-col-title">Live Suggestions</h4>
+                <div class="suggestion-list" id="searchSuggestionsList"></div>
+            </div>
+            <div>
+                <h4 class="suggestion-col-title">Your Recent Searches</h4>
+                <div class="suggestion-list" id="searchHistoryList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- Mobile Bottom Navigation --- -->
+    <nav class="mobile-bottom-nav">
+        <a href="#home" class="mobile-nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#shop" class="mobile-nav-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Shop</span>
+        </a>
+        <a href="#wishlist" class="mobile-nav-item">
+            <i class="fa-regular fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="#cart" class="mobile-nav-item">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Cart</span>
+        </a>
+        <a href="#dashboard" class="mobile-nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Account</span>
+        </a>
+    </nav>
+
+    <!-- --- Comparison Drawer Panel --- -->
+    <div class="compare-drawer" id="compareDrawer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px">
+            <h4 style="font-family: var(--font-serif); font-size: 18px">Product Match Compare</h4>
+            <button class="btn-text" id="closeCompareBtn">Close</button>
+        </div>
+        <div class="compare-grid" id="compareGridList">
+            <!-- Render comparison products details side-by-side -->
+        </div>
+    </div>
+
+    <!-- --- Luxury Footer --- -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h2 class="footer-logo">CLICHE</h2>
+                <p class="footer-about">An enterprise of supreme curation, timeless aesthetics, and premium SaaS-grade
+                    bespoke architecture.</p>
+            </div>
+            <div>
+                <h3 class="footer-col-title">Directives</h3>
+                <div class="footer-links">
+                    <a href="#home">Home Base</a>
+                    <a href="#shop">Luxury Catalog</a>
+                    <a href="#wishlist">Vault Wishlist</a>
+                    <a href="#dashboard">Bespoke Portal</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-col-title">Assistance</h3>
+                <div class="footer-links">
+                    <a href="#tracking">Real-time Logistics</a>
+                    <a href="#">Secure Returns</a>
+                    <a href="#">Direct Couture Consultation</a>
+                    <a href="#">Corporate API Access</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-col-title">Headquarters</h3>
+                <p style="font-size: 13px; opacity: 0.7; line-height: 2">16, CLICHE WTF INC<br>16 CLICHE, WTF<br>Direct
+                    Line: userprotonimous@proton.me</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 CLICHE WTF All Rights Reserved. Designed for Enterprise Scale.</span>
+        </div>
+    </footer>
+</body>
+<script src="js/app.js"></script>
+
+</html>
